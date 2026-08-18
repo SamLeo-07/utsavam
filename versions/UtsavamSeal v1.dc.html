@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<svg viewBox="0 0 400 400" width="100%" height="100%" style="display:block;overflow:visible">
+  <circle cx="200" cy="200" r="190" fill="{{ bg }}"></circle>
+  <circle cx="200" cy="200" r="184" fill="none" stroke="{{ orn }}" stroke-width="2.5"></circle>
+  <circle cx="200" cy="200" r="175" fill="none" stroke="{{ orn }}" stroke-width="1"></circle>
+  <circle cx="200" cy="200" r="158" fill="none" stroke="{{ orn }}" stroke-width="0.75"></circle>
+  <g fill="none" stroke="{{ orn }}" stroke-width="2.2">
+    <path d="M200,122 C185,107 182,77 200,52 C218,77 215,107 200,122 Z" transform="rotate(-50 200 122)"></path>
+    <path d="M200,122 C185,107 182,77 200,52 C218,77 215,107 200,122 Z" transform="rotate(-25 200 122)"></path>
+    <path d="M200,122 C185,107 182,77 200,52 C218,77 215,107 200,122 Z"></path>
+    <path d="M200,122 C185,107 182,77 200,52 C218,77 215,107 200,122 Z" transform="rotate(25 200 122)"></path>
+    <path d="M200,122 C185,107 182,77 200,52 C218,77 215,107 200,122 Z" transform="rotate(50 200 122)"></path>
+  </g>
+  <circle cx="200" cy="122" r="3" fill="{{ orn }}"></circle>
+  <line x1="153" y1="148" x2="247" y2="148" stroke="{{ orn }}" stroke-width="1.2"></line>
+  <text x="200" y="200" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="40" letter-spacing="6" fill="{{ word }}">UTSAVAM</text>
+  <g stroke="{{ orn }}" stroke-width="1.3">
+    <line x1="145" y1="228" x2="186" y2="228"></line>
+    <line x1="214" y1="228" x2="255" y2="228"></line>
+  </g>
+  <rect x="194" y="222" width="12" height="12" transform="rotate(45 200 228)" fill="none" stroke="{{ orn }}" stroke-width="1.3"></rect>
+  <text x="200" y="256" text-anchor="middle" font-family="'DM Sans', sans-serif" font-weight="600" font-size="13" letter-spacing="3.5" fill="{{ sub }}">BY REL-EVENT</text>
+  <line x1="163" y1="271" x2="237" y2="271" stroke="{{ orn }}" stroke-width="1.2"></line>
+  <path d="M163,290 Q200,274 237,290" fill="none" stroke="{{ orn }}" stroke-width="1.3"></path>
+  <circle cx="200" cy="296" r="2.3" fill="{{ orn }}"></circle>
+  <path d="M181,303 Q200,296 219,303" fill="none" stroke="{{ orn }}" stroke-width="1"></path>
+</svg>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:220,&quot;height&quot;:220},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;A&quot;,&quot;options&quot;:[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const map = {
+      A: { bg: '#1A0A00', orn: '#C9952A', word: '#FFF5E6', sub: '#C9952A' },
+      B: { bg: '#FAF3E4', orn: '#C9952A', word: '#1A0A00', sub: '#1A0A00' },
+      C: { bg: '#0D3B2E', orn: '#C9952A', word: '#C9952A', sub: '#C9952A' },
+      D: { bg: '#8B1A1A', orn: '#C9952A', word: '#C9952A', sub: '#C9952A' },
+      E: { bg: '#1A0A00', orn: '#C9952A', word: '#C9952A', sub: '#C9952A' },
+    };
+    const v = map[this.props.variant] || map.A;
+    return v;
+  }
+}
+
+</script>
+</body>
+</html>

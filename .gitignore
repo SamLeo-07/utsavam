@@ -1,0 +1,8 @@
+# Freebuff app state (local bookkeeping, not project files)
+.freebuff/
+.thumbnail
+.image-slots.state.json
+
+# OS junk
+.DS_Store
+Thumbs.db
